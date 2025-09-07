@@ -1,20 +1,20 @@
 {
-  "name": "@ai-voice-cloner/source",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "@nx/js": "21.4.1",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
-    "nx": "21.4.1",
-    "tslib": "^2.3.0",
-    "typescript": "~5.8.2"
+  "name": "ai-voice-cloner",
+  "version": "1.0.0",
+  "description": "AI Voice Cloning application with Angular, NestJS, and Python",
+  "scripts": {
+    "start": "docker-compose up",
+    "start:dev": "docker-compose up --build",
+    "stop": "docker-compose down",
+    "clean": "docker-compose down -v --remove-orphans",
+    "frontend:dev": "cd frontend && npm run start",
+    "backend:dev": "cd backend && npm run start:dev",
+    "python:dev": "cd python-service && python app.py"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "keywords": ["ai", "voice-cloning", "tts", "angular", "nestjs", "python"],
+  "author": "AI Voice Cloner Team",
+  "license": "MIT",
+  "devDependencies": {
+    "nx": "^21.4.1"
+  }
 }

@@ -1,109 +1,102 @@
-# AiVoiceCloner
+# AI Voice Cloner
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A full-stack application for AI-powered voice cloning using Angular, NestJS, and Python with Coqui TTS.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Architecture
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **Frontend**: Angular 17 with TailwindCSS
+- **Backend**: NestJS with JWT authentication and Stripe payments
+- **AI Service**: Python Flask with Coqui TTS
+- **Database**: PostgreSQL
+- **Cache**: Redis
 
-## Generate a library
+## Features
 
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
+- Upload voice samples for training
+- Generate speech from text with custom voices
+- Multiple language support
+- Voice style selection
+- Pay-per-minute and subscription billing
+- JWT authentication
+- Docker containerization
+
+## Quick Start
+
+1. **Clone and setup**:
+   ```bash
+   cd ai-voice-cloner
+   cp .env.example .env
+   # Edit .env with your API keys
+   ```
+
+2. **Start with Docker Compose**:
+   ```bash
+   docker-compose up --build
+   ```
+
+3. **Access the application**:
+   - Frontend: http://localhost:4200
+   - Backend API: http://localhost:3000
+   - Python Service: http://localhost:5000
+
+## API Endpoints
+
+### Backend (NestJS)
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/train-voice` - Upload voice sample
+- `POST /api/voice` - Generate voice from text
+- `POST /api/pay` - Process payments
+
+### Python Service
+- `POST /generate` - Generate audio from text
+- `GET /health` - Health check
+- `GET /models` - List available TTS models
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and configure:
+
+- `DATABASE_URL` - PostgreSQL connection string
+- `JWT_SECRET` - JWT signing secret
+- `STRIPE_SECRET_KEY` - Stripe secret key
+- `STRIPE_PUBLISHABLE_KEY` - Stripe publishable key
+
+## Development
+
+### Frontend Development
+```bash
+cd frontend
+npm install
+ng serve
 ```
 
-## Run tasks
-
-To build the library use:
-
-```sh
-npx nx build pkg1
+### Backend Development
+```bash
+cd backend
+npm install
+npm run start:dev
 ```
 
-To run any task with Nx use:
-
-```sh
-npx nx <target> <project-name>
+### Python Service Development
+```bash
+cd python-service
+pip install -r requirements.txt
+python app.py
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Production Deployment
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+1. Update environment variables for production
+2. Build and deploy with Docker Compose
+3. Configure reverse proxy (nginx)
+4. Set up SSL certificates
+5. Configure database backups
 
-## Versioning and releasing
+## Tech Stack
 
-To version and release the library use
-
-```
-npx nx release
-```
-
-Pass `--dry-run` to see what would happen without actually releasing the library.
-
-[Learn more about Nx release &raquo;](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Keep TypeScript project references up to date
-
-Nx automatically updates TypeScript [project references](https://www.typescriptlang.org/docs/handbook/project-references.html) in `tsconfig.json` files to ensure they remain accurate based on your project dependencies (`import` or `require` statements). This sync is automatically done when running tasks such as `build` or `typecheck`, which require updated references to function correctly.
-
-To manually trigger the process to sync the project graph dependencies information to the TypeScript project references, run the following command:
-
-```sh
-npx nx sync
-```
-
-You can enforce that the TypeScript project references are always in the correct state when running in CI by adding a step to your CI job configuration that runs the following command:
-
-```sh
-npx nx sync:check
-```
-
-[Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- **Frontend**: Angular 17, TailwindCSS, RxJS
+- **Backend**: NestJS, JWT, Stripe, Multer
+- **AI**: Python, Flask, Coqui TTS, PyTorch
+- **Database**: PostgreSQL, Redis
+- **DevOps**: Docker, Docker Compose

@@ -1,44 +1,66 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
 
-# compiled output
-dist
-tmp
-out-tsc
+# Build outputs
+dist/
+build/
+*.tgz
+*.tar.gz
 
-# dependencies
-node_modules
+# Environment variables
+.env
+.env.local
+.env.production
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
 
-# System Files
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-.nx/cache
-.nx/workspace-data
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Uploads and temporary files
+uploads/
+temp/
+tmp/
+models/
+
+# Docker
+.dockerignore
+
+# Nx
+.nx/cache/

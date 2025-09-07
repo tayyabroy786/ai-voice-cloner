@@ -1,0 +1,99 @@
+{
+  "name": "@ai-voice-cloner/backend",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "--node-env=production"
+          ],
+          "cwd": "backend"
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "--node-env=development"
+            ]
+          }
+        }
+      },
+      "prune-lockfile": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "executor": "@nx/js:prune-lockfile",
+        "outputs": [
+          "{workspaceRoot}/backend/dist/package.json",
+          "{workspaceRoot}/backend/dist/package-lock.json"
+        ],
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "copy-workspace-modules": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "outputs": [
+          "{workspaceRoot}/backend/dist/workspace_modules"
+        ],
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "prune": {
+        "dependsOn": [
+          "prune-lockfile",
+          "copy-workspace-modules"
+        ],
+        "executor": "nx:noop"
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@ai-voice-cloner/backend:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@ai-voice-cloner/backend:build:development"
+          },
+          "production": {
+            "buildTarget": "@ai-voice-cloner/backend:build:production"
+          }
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "@nestjs/passport": "^10.0.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "bcrypt": "^5.1.0",
+    "stripe": "^14.0.0",
+    "axios": "^1.6.0",
+    "multer": "^1.4.5-lts.1",
+    "@types/multer": "^1.4.11",
+    "@types/bcrypt": "^5.0.2",
+    "@types/passport-jwt": "^3.0.13",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }
+}

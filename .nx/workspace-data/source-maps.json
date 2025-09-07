@@ -1,0 +1,480 @@
+{
+  "backend": {
+    "root": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets": [
+      "backend/tsconfig.app.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.dependsOn": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.cache": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.inputs": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.outputs": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.syncGenerators": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.executor": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.cwd": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.command": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies.0": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.description": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.command": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.example": [
+      "backend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "projectType": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.cache": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.dependsOn": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.inputs": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.outputs": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.executor": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.cwd": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.args": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.technologies": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.technologies.0": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.description": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help.example": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.continuous": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.options": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.executor": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.options.cwd": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.options.args": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.options.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.technologies": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.technologies.0": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.description": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.help": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.help.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve.metadata.help.example": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.continuous": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.executor": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.cwd": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.args": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.technologies": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.technologies.0": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.description": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help.example": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.continuous": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.dependsOn": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.executor": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.options": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.options.buildTarget": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.serve-static.options.spa": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build-deps": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build-deps.dependsOn": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.continuous": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.dependsOn": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.executor": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options.command": [
+      "backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ]
+  },
+  "backend-e2e": {
+    "root": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.dependsOn": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.cache": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.inputs": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.outputs": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.syncGenerators": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.executor": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.cwd": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.command": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies.0": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.description": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.command": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.example": [
+      "backend-e2e/tsconfig.json",
+      "@nx/js/typescript"
+    ]
+  },
+  "frontend": {
+    "root": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets": [
+      "frontend/tsconfig.app.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.dependsOn": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.cache": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.inputs": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.outputs": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.syncGenerators": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.executor": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.cwd": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.command": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies.0": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.description": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.command": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.example": [
+      "frontend/tsconfig.json",
+      "@nx/js/typescript"
+    ]
+  }
+}
