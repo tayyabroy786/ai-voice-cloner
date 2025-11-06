@@ -18,6 +18,7 @@ export class DashboardComponent {
   recordingInterval: any;
   generatedAudioUrl: string | null = null;
   lastGeneratedText = '';
+  availableVoices: any[] = [];
 
   languages = [
     { value: 'en', label: 'English' },
@@ -51,20 +52,43 @@ export class DashboardComponent {
       text: ['', Validators.required],
       language: ['en', Validators.required],
       voiceType: ['female', Validators.required],
-      voiceStyle: ['neutral', Validators.required]
+      voiceStyle: ['neutral', Validators.required],
+      voiceId: ['default', Validators.required]
     });
+
+    this.loadAvailableVoices();
 
     // Clear previous audio when voice settings change
-    this.voiceForm.get('language')?.valueChanges.subscribe(() => {
+    this.voiceForm.get('language')?.valueChanges.subscribe((value) => {
+      console.log('Language changed to:', value);
       this.clearGeneratedAudio();
     });
 
-    this.voiceForm.get('voiceType')?.valueChanges.subscribe(() => {
+    this.voiceForm.get('voiceType')?.valueChanges.subscribe((value) => {
+      console.log('Voice type changed to:', value);
       this.clearGeneratedAudio();
     });
 
-    this.voiceForm.get('voiceStyle')?.valueChanges.subscribe(() => {
+    this.voiceForm.get('voiceStyle')?.valueChanges.subscribe((value) => {
+      console.log('Voice style changed to:', value);
       this.clearGeneratedAudio();
+    });
+
+    this.voiceForm.get('voiceId')?.valueChanges.subscribe((value) => {
+      console.log('Voice ID changed to:', value);
+      this.clearGeneratedAudio();
+    });
+  }
+
+  loadAvailableVoices() {
+    this.http.post('http://localhost:3001/api/voices', {}).subscribe({
+      next: (voices: any) => {
+        this.availableVoices = voices;
+        console.log('Available voices:', voices);
+      },
+      error: (error) => {
+        console.error('Failed to load voices:', error);
+      }
     });
   }
 
@@ -119,6 +143,7 @@ export class DashboardComponent {
       next: (response) => {
         console.log('Recorded voice uploaded successfully', response);
         alert('Recorded voice sample uploaded successfully!');
+        this.loadAvailableVoices(); // Refresh voice list
         this.deleteRecording();
       },
       error: (error) => {
@@ -138,6 +163,7 @@ export class DashboardComponent {
       next: (response) => {
         console.log('Voice uploaded successfully', response);
         alert('Voice sample uploaded successfully!');
+        this.loadAvailableVoices(); // Refresh voice list
       },
       error: (error) => {
         console.error('Upload failed', error);
@@ -153,13 +179,19 @@ export class DashboardComponent {
     this.clearGeneratedAudio();
     
     this.isGenerating = true;
-    const formData = this.voiceForm.value;
+    const formData = { ...this.voiceForm.value }; // Create a copy to avoid reference issues
     this.lastGeneratedText = formData.text;
+
+    console.log('Generating voice with settings:', formData); // Debug log
 
     this.http.post('http://localhost:3001/api/voice', formData, { responseType: 'blob' }).subscribe({
       next: (audioBlob: Blob) => {
         this.generatedAudioUrl = URL.createObjectURL(audioBlob);
         this.isGenerating = false;
+        
+        // Force form to update its state
+        this.voiceForm.markAsPristine();
+        this.voiceForm.updateValueAndValidity();
       },
       error: (error) => {
         console.error('Generation failed', error);

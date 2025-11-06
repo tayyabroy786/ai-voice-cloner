@@ -32,4 +32,9 @@ export class VoiceController {
     
     return res.send(result.audioBuffer);
   }
+
+  @Post('voices')
+  async getAvailableVoices() {
+    return this.voiceService.getAvailableVoices();
+  }
 }
