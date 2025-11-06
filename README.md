@@ -1,12 +1,31 @@
 # AI Voice Cloner
 
-A full-stack application for AI-powered voice cloning using Angular, NestJS, and Python with Coqui TTS.
+A full-stack application for AI-powered voice cloning using Angular and NestJS with Node.js TTS.
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js (v18+)
+- Docker & Docker Compose
+- Git
+
+### Quick Install
+```bash
+git clone <repository-url>
+cd ai-voice-cloner
+cp .env.example .env
+# Edit .env with your configuration
+docker-compose up --build
+```
+
+### Access Application
+- Frontend: http://localhost:4200
+- Backend API: http://localhost:3000
 
 ## Architecture
 
 - **Frontend**: Angular 17 with TailwindCSS
-- **Backend**: NestJS with JWT authentication and Stripe payments
-- **AI Service**: Python Flask with Coqui TTS
+- **Backend**: NestJS with JWT authentication, Stripe payments, and Node.js TTS
 - **Database**: PostgreSQL
 - **Cache**: Redis
 
@@ -37,7 +56,6 @@ A full-stack application for AI-powered voice cloning using Angular, NestJS, and
 3. **Access the application**:
    - Frontend: http://localhost:4200
    - Backend API: http://localhost:3000
-   - Python Service: http://localhost:5000
 
 ## API Endpoints
 
@@ -48,10 +66,7 @@ A full-stack application for AI-powered voice cloning using Angular, NestJS, and
 - `POST /api/voice` - Generate voice from text
 - `POST /api/pay` - Process payments
 
-### Python Service
-- `POST /generate` - Generate audio from text
-- `GET /health` - Health check
-- `GET /models` - List available TTS models
+
 
 ## Environment Variables
 
@@ -78,12 +93,7 @@ npm install
 npm run start:dev
 ```
 
-### Python Service Development
-```bash
-cd python-service
-pip install -r requirements.txt
-python app.py
-```
+
 
 ## Production Deployment
 
@@ -97,6 +107,6 @@ python app.py
 
 - **Frontend**: Angular 17, TailwindCSS, RxJS
 - **Backend**: NestJS, JWT, Stripe, Multer
-- **AI**: Python, Flask, Coqui TTS, PyTorch
+- **TTS**: Node.js say, Google TTS (gtts)
 - **Database**: PostgreSQL, Redis
 - **DevOps**: Docker, Docker Compose

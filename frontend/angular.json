@@ -27,7 +27,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "frontend:build",
-            "port": 4200
+            "port": 4201
           }
         }
       }

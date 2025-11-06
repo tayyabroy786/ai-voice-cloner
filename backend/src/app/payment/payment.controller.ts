@@ -1,7 +1,7 @@
 import { Controller, Post, Body, HttpException, HttpStatus } from '@nestjs/common';
 import { PaymentService } from './payment.service';
 
-@Controller('api')
+@Controller()
 export class PaymentController {
   constructor(private readonly paymentService: PaymentService) {}
 

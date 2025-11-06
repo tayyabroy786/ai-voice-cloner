@@ -135,21 +135,8 @@
               }
             ],
             "outputs": [
-              "{projectRoot}/**/*.js",
-              "{projectRoot}/**/*.cjs",
-              "{projectRoot}/**/*.mjs",
-              "{projectRoot}/**/*.jsx",
-              "{projectRoot}/**/*.js.map",
-              "{projectRoot}/**/*.jsx.map",
-              "{projectRoot}/**/*.d.ts",
-              "{projectRoot}/**/*.d.cts",
-              "{projectRoot}/**/*.d.mts",
-              "{projectRoot}/**/*.d.ts.map",
-              "{projectRoot}/**/*.d.cts.map",
-              "{projectRoot}/**/*.d.mts.map",
-              "{projectRoot}/tsconfig.tsbuildinfo",
               "{projectRoot}/dist/**/*.d.ts",
-              "{projectRoot}/dist/tsconfig.app.tsbuildinfo"
+              "{projectRoot}/dist/tsconfig.tsbuildinfo"
             ],
             "syncGenerators": [
               "@nx/js:typescript-sync"
@@ -25293,5 +25280,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1757204970490
+  "computedAt": 1762461513095
 }

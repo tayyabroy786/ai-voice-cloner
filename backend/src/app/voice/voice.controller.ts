@@ -1,8 +1,8 @@
-import { Controller, Post, Body, UploadedFile, UseInterceptors, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Body, UploadedFile, UseInterceptors, HttpException, HttpStatus, Res } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { VoiceService } from './voice.service';
 
-@Controller('api')
+@Controller()
 export class VoiceController {
   constructor(private readonly voiceService: VoiceService) {}
 
@@ -16,13 +16,20 @@ export class VoiceController {
   }
 
   @Post('voice')
-  async generateVoice(@Body() body: { text: string; language: string; voiceStyle: string; voiceId?: string }) {
-    const { text, language, voiceStyle, voiceId } = body;
+  async generateVoice(@Body() body: { text: string; language: string; voiceType: string; voiceStyle: string; voiceId?: string }, @Res() res) {
+    const { text, language, voiceType, voiceStyle, voiceId } = body;
     
     if (!text) {
       throw new HttpException('Text is required', HttpStatus.BAD_REQUEST);
     }
 
-    return this.voiceService.generateVoice(text, language, voiceStyle, voiceId);
+    const result: any = await this.voiceService.generateVoice(text, language, voiceType, voiceStyle, voiceId);
+    
+    res.set({
+      'Content-Type': 'audio/wav',
+      'Content-Disposition': 'attachment; filename="generated-voice.wav"'
+    });
+    
+    return res.send(result.audioBuffer);
   }
 }
